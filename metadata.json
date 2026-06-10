@@ -1,0 +1,6 @@
+{
+  "name": "Systems Limited Investor Dashboard",
+  "description": "Premium industrial-grade investor experience and interactive dashboard for Systems Limited Annual Report 2025.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
