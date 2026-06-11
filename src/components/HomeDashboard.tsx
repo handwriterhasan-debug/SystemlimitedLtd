@@ -174,22 +174,22 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
   ];
 
   return (
-    <div className="space-y-16 py-4">
+    <div className="space-y-10 sm:space-y-16 py-3 sm:py-4">
       
       {/* Simulation Controls Banner */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 bg-white/70 backdrop-blur-md rounded-2xl border border-neutral-200/60 shadow-xs gap-3">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-3.5 sm:p-4 bg-white/70 backdrop-blur-md rounded-2xl border border-neutral-200/60 shadow-xs gap-3">
         <div className="flex items-center space-x-2.5">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center shrink-0">
             <span className="relative flex h-2.5 w-2.5">
               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isLoading ? "bg-amber-400" : "bg-emerald-400"}`}></span>
               <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isLoading ? "bg-amber-500" : "bg-emerald-500"}`}></span>
             </span>
           </div>
           <div className="space-y-0.5">
-            <span className="text-[10px] uppercase font-mono tracking-wider font-extrabold text-neutral-800">
+            <span className="text-[8.5px] sm:text-[10px] uppercase font-mono tracking-wider font-extrabold text-neutral-800">
               Systems Limited Connection Engine
             </span>
-            <p className="text-[10px] text-neutral-500 font-mono">
+            <p className="text-[8px] sm:text-[10px] text-neutral-500 font-mono">
               {isLoading ? "STREAMING AUDITED CORPORATE BLUEPRINTS & METRICS FROM INGRESS PROXIES..." : "STATUS: LIVE CACHED SECURELY (2026-06-10)"}
             </p>
           </div>
@@ -198,19 +198,19 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
         <button
           onClick={triggerLiveFetch}
           disabled={isLoading}
-          className={`px-4 py-2 font-mono text-[10px] font-bold rounded-xl border transition-all pointer-events-auto cursor-pointer flex items-center gap-1.5 uppercase ${
+          className={`px-3 py-1.5 sm:px-4 sm:py-2 font-mono text-[8px] sm:text-[10px] font-bold rounded-xl border transition-all pointer-events-auto cursor-pointer flex items-center gap-1.5 uppercase ${
             isLoading
               ? "bg-neutral-100 text-neutral-400 border-neutral-200 cursor-not-allowed"
               : "bg-purple-50 text-purple-750 border-purple-200 hover:bg-purple-100/80 active:scale-95 text-purple-700"
           }`}
         >
-          <Zap className={`w-3.5 h-3.5 ${isLoading ? "animate-bounce" : "text-purple-600"}`} />
+          <Zap className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${isLoading ? "animate-bounce" : "text-purple-600"}`} />
           {isLoading ? "Fetching Assets..." : "Simulate Refresh API Call"}
         </button>
       </div>
 
       {/* 1. HERO BANNER - MATCHING SYSTEMS LIMITED WEB COVERAGE */}
-      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#4c2475] via-[#5F2E95] to-[#802D96] text-white p-8 md:p-14 shadow-xl border border-purple-500/20">
+      <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-[#4c2475] via-[#5F2E95] to-[#802D96] text-white p-5 sm:p-10 md:p-14 shadow-xl border border-purple-500/20">
         {/* Animated design waves in background mimicking official wave graphics */}
         <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
           <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -224,13 +224,13 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-4xl space-y-6">
-          <span className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-mono font-bold tracking-widest uppercase text-purple-200">
-            <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+        <div className="relative z-10 max-w-4xl space-y-4 sm:space-y-6">
+          <span className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md rounded-full px-2 py-0.5 sm:px-3 sm:py-1 text-[8px] sm:text-[10px] font-mono font-bold tracking-wider sm:tracking-widest uppercase text-purple-200">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-300 shrink-0" />
             <span>GLOBAL SYSTEMS ENGAGEMENT & AI INTEGRATIONS</span>
           </span>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-tight uppercase font-black">
+          <h1 className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight leading-snug sm:leading-tight uppercase">
             IT consulting and <br />
             AI transformation <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300">
@@ -238,24 +238,24 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
             </span>
           </h1>
 
-          <p className="text-sm md:text-base text-purple-100 max-w-2xl leading-relaxed font-sans font-medium">
+          <p className="text-[11px] sm:text-sm md:text-base text-purple-100 max-w-2xl leading-relaxed font-sans font-medium">
             Helping enterprises modernize, scale, and lead through world-class technology delivery. Systems Limited represents an unmatched engine of digital export services and custom AI architectures spanning 5 global regions.
           </p>
 
-          <div className="pt-4 flex flex-wrap gap-4">
+          <div className="pt-2 sm:pt-4 flex flex-wrap gap-2.5 sm:gap-4 text-[10px] sm:text-xs">
             <button
               onClick={() => onNavigate(2)} // Navigate to Financial Metrics (id 2 matches app.tsx list)
-              className="inline-flex items-center space-x-2.5 bg-white text-purple-900 hover:bg-neutral-100 transition-all font-sans font-extrabold text-xs px-6 py-3.5 rounded-full shadow-lg active:scale-95 cursor-pointer"
+              className="inline-flex items-center space-x-2 bg-white text-purple-900 hover:bg-neutral-100 transition-all font-sans font-extrabold text-[10.5px] sm:text-xs px-4 py-2.5 sm:px-6 sm:py-3.5 rounded-full shadow-lg active:scale-95 cursor-pointer shrink-0"
             >
               <span>EXPLORE FY25 PERFORMANCE MATRIX</span>
-              <ArrowRight className="w-4 h-4 text-purple-900" />
+              <ArrowRight className="w-3.5 h-3.5 text-purple-900 shrink-0" />
             </button>
             <button
               onClick={() => {
                 const formEl = document.getElementById("contact-section");
                 formEl?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center space-x-2 bg-transparent hover:bg-white/10 text-white font-mono font-bold text-xs px-5 py-3 rounded-full border border-white/20 transition-colors uppercase cursor-pointer"
+              className="inline-flex items-center space-x-2 bg-transparent hover:bg-white/10 text-white font-mono font-bold text-[10.5px] sm:text-xs px-4 py-2.5 sm:px-5 sm:py-3 rounded-full border border-white/20 transition-colors uppercase cursor-pointer shrink-0"
             >
               <span>Build the future now</span>
             </button>
@@ -263,65 +263,65 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
         </div>
       </div>
 
-      {/* 2. STATS OVERVIEW - "FROM DIGITAL CHANGE TO AI-POWERED ADVANTAGE" */}
-      <div className="bg-white border border-neutral-150 rounded-3xl p-8 md:p-10 shadow-sm space-y-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          <div className="lg:col-span-5 space-y-4">
-            <span className="text-[10px] tracking-[0.25em] font-mono text-purple-600 font-bold uppercase block">
+      {/* 2. STATS OVERVIEW - '"FROM DIGITAL CHANGE TO AI-POWERED ADVANTAGE"' */}
+      <div className="bg-white border border-neutral-150 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-sm space-y-6 sm:space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-center">
+          <div className="lg:col-span-5 space-y-2 sm:space-y-4">
+            <span className="text-[7.5px] sm:text-[10px] tracking-wider sm:tracking-[0.25em] font-mono text-purple-600 font-extrabold uppercase block">
               Systems Limited Advantage
             </span>
-            <h2 className="text-2xl md:text-3xl font-display font-black text-neutral-850 uppercase leading-tight">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-display font-black text-neutral-850 uppercase leading-snug sm:leading-tight">
               From digital change to AI-powered advantage
             </h2>
           </div>
           <div className="lg:col-span-7">
-            <p className="text-xs md:text-sm text-neutral-600 leading-relaxed font-sans font-medium">
+            <p className="text-[11px] sm:text-xs md:text-sm text-neutral-600 leading-relaxed font-sans font-medium">
               We help enterprises reimagine how they work, serve, and grow with AI-led transformation that turns complexity into clarity and ambition into measurable corporate success. Systems Limited continuously delivers tier-1 software blueprints internationally.
             </p>
           </div>
         </div>
 
         {/* Triple Numerical Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-neutral-150">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-6 sm:pt-8 border-t border-neutral-150">
           {isLoading ? (
             Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="space-y-3 pointer-events-none select-none">
-                <div className="h-10 w-28 bg-neutral-200 animate-pulse rounded-lg" />
-                <div className="h-4.5 w-3/4 bg-neutral-200 animate-pulse rounded" />
-                <div className="space-y-1.5 pt-1">
-                  <div className="h-3 w-full bg-neutral-150 animate-pulse rounded" />
-                  <div className="h-3 w-5/6 bg-neutral-150 animate-pulse rounded" />
+              <div key={i} className="space-y-2.5 sm:space-y-3 pointer-events-none select-none">
+                <div className="h-8 w-20 sm:h-10 sm:w-28 bg-neutral-200 animate-pulse rounded-lg" />
+                <div className="h-4 w-2/3 bg-neutral-200 animate-pulse rounded" />
+                <div className="space-y-1 pt-1">
+                  <div className="h-2.5 w-full bg-neutral-150 animate-pulse rounded" />
+                  <div className="h-2.5 w-5/6 bg-neutral-150 animate-pulse rounded" />
                 </div>
               </div>
             ))
           ) : (
             <>
-              <div className="space-y-2">
-                <div className="text-5xl font-display font-black tracking-tight text-purple-700">49+</div>
-                <p className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
+              <div className="space-y-1 sm:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight text-purple-700">49+</div>
+                <p className="text-[8.5px] sm:text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
                   Years of continual success
                 </p>
-                <p className="text-xs text-neutral-500 font-sans leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-neutral-520 font-sans leading-relaxed">
                   Serving global partners since 1977 as an enterprise engineering pillar with persistent market authority.
                 </p>
               </div>
 
-              <div className="space-y-2">
-                <div className="text-5xl font-display font-black tracking-tight text-purple-700">8,500+</div>
-                <p className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
+              <div className="space-y-1 sm:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight text-purple-700">8,500+</div>
+                <p className="text-[8.5px] sm:text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
                   Change makers driving digital change
                 </p>
-                <p className="text-xs text-neutral-500 font-sans leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-neutral-520 font-sans leading-relaxed">
                   Highly specialized technical engineers, cloud practitioners, and custom Generative AI product experts.
                 </p>
               </div>
 
-              <div className="space-y-2">
-                <div className="text-5xl font-display font-black tracking-tight text-purple-700">16+</div>
-                <p className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
+              <div className="space-y-1 sm:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight text-purple-700">16+</div>
+                <p className="text-[8.5px] sm:text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
                   Countries of global presence
                 </p>
-                <p className="text-xs text-neutral-500 font-sans leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-neutral-520 font-sans leading-relaxed">
                   Scalable delivery channels in North America, Europe, United Kingdom, MEA, and across APAC.
                 </p>
               </div>
@@ -331,15 +331,15 @@ export default function HomeDashboard({ onNavigate }: HomeDashboardProps) {
       </div>
 
       {/* 3. RECOGNITIONS & ACCOLADES CARDS */}
-      <div className="space-y-6">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-[10px] tracking-[0.2em] font-mono text-purple-600 font-bold uppercase">
+      <div className="space-y-5 sm:space-y-6">
+        <div className="text-center max-w-2xl mx-auto space-y-1">
+          <span className="text-[7.5px] sm:text-[10px] tracking-wider sm:tracking-[0.2em] font-mono text-purple-600 font-extrabold uppercase">
             Global Standing
           </span>
-          <h2 className="text-xl md:text-2xl font-display font-black text-neutral-850 uppercase tracking-tight">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-display font-black text-neutral-850 uppercase tracking-tight">
             Awards & Recognized Influence
           </h2>
-          <p className="text-xs text-neutral-500 font-sans">
+          <p className="text-[11px] sm:text-xs text-neutral-500 font-sans">
             Our audited growth models and world-class product integrations receive constant global validation.
           </p>
         </div>

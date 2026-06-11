@@ -103,25 +103,25 @@ export default function App() {
 
       {/* iOS 17 Premium Sticky Glass Navigation Header */}
       <header className="sticky top-0 z-40 backdrop-blur-md transition-colors duration-300 glass-navbar-light text-neutral-800">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 md:px-10 py-3 md:py-4 flex flex-row justify-between items-center gap-3">
           
           {/* Brand Logo & Identity */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
             <div className="relative">
-              <span className="text-white bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-1 rounded-xl text-[13px] font-bold tracking-tight shadow-md shadow-blue-500/10">
+              <span className="text-white bg-gradient-to-r from-blue-600 to-purple-600 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl text-[10.5px] sm:text-[13px] font-bold tracking-tight shadow-md shadow-blue-500/10">
                 systems
               </span>
             </div>
-            <div className="flex items-center space-x-2 border-l border-neutral-300/40 pl-3">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full inline-block animate-pulse"></span>
-              <span className="uppercase text-[9px] font-mono tracking-widest text-neutral-500 font-bold">
-                Investor Relations FY25
+            <div className="flex items-center space-x-1.5 sm:space-x-2 border-l border-neutral-300/40 pl-2 sm:pl-3">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 rounded-full inline-block animate-pulse shrink-0"></span>
+              <span className="uppercase text-[7.5px] sm:text-[9px] tracking-wider sm:tracking-widest text-neutral-500 font-extrabold">
+                Investor FY25
               </span>
             </div>
           </div>
 
           {/* Quick HUD Navigation & Action Triggers */}
-          <div className="flex items-center space-x-6 text-[10px] uppercase font-mono tracking-widest text-neutral-500">
+          <div className="flex items-center space-x-3 sm:space-x-6 text-[8px] sm:text-[10px] uppercase font-mono tracking-wider sm:tracking-widest text-neutral-500">
             <div className="hidden lg:flex items-center space-x-2 pr-4 border-r border-neutral-300/40">
               <Keyboard className="w-4 h-4 text-blue-500" />
               <span>KEY VALUE:</span>
@@ -130,24 +130,58 @@ export default function App() {
               </span>
             </div>
 
-            <span className="text-neutral-500 font-mono tracking-tight font-medium">{timeStr}</span>
+            <span className="hidden xs:inline text-neutral-505 font-mono tracking-tight font-medium text-[8px] sm:text-[10px]">{timeStr}</span>
 
             {/* Systems Stock Ticker / Status KPI */}
-            <div className="flex items-center space-x-2 bg-white/60 border border-neutral-300/30 px-2.5 py-1 rounded-xl text-[9px] font-mono font-bold tracking-wider text-neutral-600 shadow-sm hover:border-blue-500/30 transition-all">
-              <TrendingUp className="w-3.5 h-3.5 text-emerald-500" />
-              <span>PSX: SYS</span>
-              <span className="text-emerald-600 font-extrabold">+3.84%</span>
+            <div className="flex items-center space-x-1 sm:space-x-2 bg-white/60 border border-neutral-300/30 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-lg sm:rounded-xl text-[7.5px] sm:text-[9px] font-mono font-bold tracking-wider text-neutral-600 shadow-xs hover:border-blue-500/30 transition-all">
+              <TrendingUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500 shrink-0" />
+              <span className="hidden sm:inline">PSX: SYS</span>
+              <span className="text-emerald-600 font-black">+3.84%</span>
             </div>
           </div>
         </div>
       </header>
 
       {/* Main Interactive Stage Container */}
-      <main className="max-w-7xl mx-auto px-6 md:px-10 py-10 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <main className="max-w-7xl mx-auto px-3.5 xs:px-4 sm:px-6 md:px-10 py-5 sm:py-8 relative z-10">
+        
+        {/* Mobile Navigation - Spacious and high contrast with 44px+ touch targets */}
+        <div className="lg:hidden mb-6">
+          <div className="flex justify-between items-center mb-2 px-1">
+            <span className="text-[9px] tracking-[0.2em] font-mono text-neutral-500 font-extrabold uppercase">Report Navigation Menu</span>
+            <button
+              onClick={() => setShowHelpOverlay(true)}
+              className="text-[9px] font-mono uppercase tracking-widest text-purple-700 font-black flex items-center gap-1 cursor-pointer min-h-[36px] px-2 rounded-lg bg-purple-50/70 border border-purple-200/40"
+            >
+              <span>Guides [?]</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-2 xs:grid-cols-3 gap-2">
+            {sections.map((section, sIdx) => {
+              const isActive = activeSectionId === section.id;
+              return (
+                <button
+                  key={section.id}
+                  onClick={() => setActiveSectionId(section.id)}
+                  className={`flex items-center space-x-2 px-3 py-2.5 min-h-[46px] rounded-xl text-[10px] sm:text-[11px] uppercase tracking-wider font-sans font-extrabold transition-all duration-150 cursor-pointer active:scale-95 text-left ${
+                    isActive
+                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md shadow-blue-500/10 border-transparent"
+                      : "bg-white border border-neutral-200 text-neutral-705 hover:text-black hover:border-neutral-400"
+                  }`}
+                  style={{ WebkitTapHighlightColor: "transparent" }}
+                >
+                  <span className={`text-[9px] font-mono shrink-0 ${isActive ? "text-white/80" : "text-neutral-400"}`}>0{sIdx + 1}.</span>
+                  <span className="truncate leading-tight">{section.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start">
           
-          {/* LEFT LAYOUT: Sidebar Nav Panel (4 Columns) */}
-          <aside className="lg:col-span-3 space-y-6">
+          {/* LEFT LAYOUT: Sidebar Nav Panel (Desktop Sticky Sidebar) */}
+          <aside className="hidden lg:block lg:col-span-3 lg:sticky lg:top-24 space-y-6">
             <div className={`p-5 rounded-2xl transition-colors duration-300 ${
               isDarkMode ? "glass-dark" : "glass-light"
             } space-y-5 shadow-sm`}>
@@ -171,7 +205,7 @@ export default function App() {
                     <button
                       key={section.id}
                       onClick={() => setActiveSectionId(section.id)}
-                      className={`group flex items-center justify-between p-3 text-xs text-left  uppercase transition-all duration-150 focus:outline-none rounded-xl cursor-pointer ${
+                      className={`group flex items-center justify-between p-3 text-xs text-left uppercase transition-all duration-150 focus:outline-none rounded-xl cursor-pointer ${
                         isActive
                           ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-md shadow-blue-500/10"
                           : `text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-white ${isDarkMode ? "hover:bg-neutral-850" : "hover:bg-neutral-200/40"}`
@@ -216,7 +250,7 @@ export default function App() {
             <KPIGrid />
 
             {/* Render the Active Dashboard Module */}
-            <div className={`p-6 md:p-8 rounded-3xl shadow-sm transition-colors duration-300 ${
+            <div className={`p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-sm transition-colors duration-300 ${
               isDarkMode ? "glass-dark" : "glass-light"
             }`}>
               <AnimatePresence mode="wait">

@@ -99,25 +99,25 @@ export default function GeographyFootprint() {
     <div className="space-y-8 select-none">
       
       {/* Title section */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-neutral-200/50 pb-4 gap-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-neutral-200/50 pb-4 gap-3">
         <div className="space-y-1">
-          <span className="text-[10px] tracking-[0.2em] font-mono text-neutral-400 uppercase font-bold block">Global Operating Footprint</span>
-          <h2 className="text-lg font-display font-black text-neutral-850 uppercase tracking-tight">Interactive Geography Map</h2>
+          <span className="text-[7.5px] sm:text-[10px] tracking-wider sm:tracking-[0.2em] font-mono text-neutral-400 uppercase font-bold block">Global Operating Footprint</span>
+          <h2 className="text-base sm:text-lg font-display font-black text-neutral-850 uppercase tracking-tight">Interactive Geography Map</h2>
         </div>
-        <div className="flex items-center space-x-2 font-mono text-[10px] text-blue-600 font-bold bg-blue-50 border border-blue-100 px-3 py-1 rounded-xl">
-          <Globe className="w-3.5 h-3.5 text-blue-500 animate-spin" style={{ animationDuration: "12s" }} />
-          <span>EXPORT GENERATED: 86% OF GROUP TOTAL REVENUE</span>
+        <div className="flex items-center space-x-1.5 font-mono text-[8px] sm:text-[10px] text-blue-650 font-extrabold bg-blue-50 border border-blue-100 px-2 py-1 rounded-lg sm:rounded-xl shrink-0">
+          <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-500 animate-spin shrink-0" style={{ animationDuration: "12s" }} />
+          <span>EXPORT REVENUE: 86% OF GROUP TOTAL</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-start">
         
         {/* World Map Component Container (7 columns) */}
-        <div className="lg:col-span-8 p-4 rounded-2xl border bg-white border-neutral-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] flex flex-col justify-between">
-          <div className="flex justify-between items-center mb-4 px-2">
+        <div className="lg:col-span-8 p-3 sm:p-4 rounded-xl sm:rounded-2xl border bg-white border-neutral-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] flex flex-col justify-between">
+          <div className="flex justify-between items-center mb-3 sm:mb-4 px-2">
             <div>
-              <h3 className="text-xs uppercase font-mono tracking-widest text-neutral-500 font-bold">Systems Global Delivery Grid</h3>
-              <p className="text-[9px] text-neutral-400 font-mono">HOVER DOTS OR REGIONS TO EXPLORE SATELLITE TEAMS</p>
+              <h3 className="text-[10px] sm:text-xs uppercase font-mono tracking-wider sm:tracking-widest text-neutral-500 font-bold">Systems Global Delivery Grid</h3>
+              <p className="text-[8px] sm:text-[9px] text-neutral-400 font-mono">HOVER DOTS OR REGIONS TO EXPLORE SATELLITE TEAMS</p>
             </div>
             
             {/* Legend color pills */}
@@ -341,24 +341,24 @@ export default function GeographyFootprint() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="absolute bottom-4 left-4 right-4 sm:left-4 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md border border-neutral-200/80 p-3 rounded-xl shadow-xl pointer-events-none font-sans text-xs space-y-1.5 z-20"
+                  className="absolute bottom-4 left-4 right-4 sm:left-4 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md border border-neutral-200/80 p-2.5 sm:p-3 rounded-xl shadow-xl pointer-events-none font-sans text-[11px] sm:text-xs space-y-1.5 z-20"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-mono font-bold text-[9px] uppercase text-neutral-400">
+                    <span className="font-mono font-bold text-[8px] sm:text-[9px] uppercase text-neutral-400">
                       Sovereign Hub Located
                     </span>
-                    <span className="text-[8px] font-mono font-black uppercase text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">
+                    <span className="text-[7.5px] sm:text-[8px] font-mono font-black uppercase text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 shrink-0">
                       SYS LIVE
                     </span>
                   </div>
                   <h5 className="font-display font-bold text-neutral-900 inline-flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-blue-600" />
+                    <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-600 shrink-0" />
                     {hoveredPin.name}
                   </h5>
-                  <p className="text-[10px] text-neutral-600 font-medium leading-relaxed">
+                  <p className="text-[9.5px] sm:text-[10px] text-neutral-600 font-medium leading-relaxed">
                     {hoveredPin.desc}
                   </p>
-                  <div className="pt-1.5 border-t border-neutral-100 flex items-center justify-between text-[9px] font-mono text-neutral-500 font-bold">
+                  <div className="pt-1.5 border-t border-neutral-100 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-neutral-500 font-bold">
                     <span>SECTOR: {hoveredPin.region.toUpperCase()}</span>
                     <span className="text-blue-600">CLICK TO SELECT</span>
                   </div>
@@ -369,9 +369,9 @@ export default function GeographyFootprint() {
           </div>
 
           {/* User Guide Ticker line */}
-          <div className="mt-4 flex items-center justify-between text-[9px] font-mono text-neutral-400 px-1 pt-1.5 border-t border-neutral-100/50">
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between text-[8px] sm:text-[9px] font-mono text-neutral-400 px-1 pt-2 border-t border-neutral-100/50 gap-2">
             <span className="flex items-center gap-1 font-semibold uppercase">
-              <Sparkles className="w-3 h-3 text-purple-500 animate-pulse" />
+              <Sparkles className="w-3 h-3 text-purple-500 animate-pulse shrink-0" />
               16+ Countries interconnected across Middle East, North America, Europe, Domestic & APAC.
             </span>
             <span className="hidden md:inline uppercase text-neutral-450 font-bold">
@@ -384,18 +384,19 @@ export default function GeographyFootprint() {
         <div className="lg:col-span-4 space-y-4">
           
           {/* Segment Selection Quick Pills */}
-          <div className="grid grid-cols-5 p-1 rounded-xl bg-neutral-100 border border-neutral-200/50 font-mono">
+          <div className="flex flex-wrap sm:grid sm:grid-cols-5 gap-1 p-1 rounded-lg sm:rounded-xl bg-neutral-100 border border-neutral-200/50 font-mono">
             {REGIONAL_PERFORMANCE.map((geo) => {
               const isSelected = selectedGeo.slug === geo.slug;
               return (
                 <button
                   key={geo.slug}
                   onClick={() => handleRegionClick(geo.slug)}
-                  className={`py-2 text-[10px] text-center font-bold tracking-wider rounded-lg transition-all cursor-pointer ${
+                  className={`flex-1 min-w-[55px] min-h-[44px] flex items-center justify-center py-1.5 sm:py-2 text-[8.5px] sm:text-[10px] text-center font-bold tracking-wider rounded-md sm:rounded-lg transition-all cursor-pointer ${
                     isSelected
                       ? "bg-white text-blue-600 shadow-sm border border-neutral-200/50"
                       : "text-neutral-500 hover:text-neutral-800"
                   }`}
+                  style={{ WebkitTapHighlightColor: "transparent" }}
                 >
                   {geo.slug.toUpperCase()}
                 </button>
@@ -404,7 +405,7 @@ export default function GeographyFootprint() {
           </div>
 
           {/* Details Financial Card */}
-          <div className="p-6 rounded-2xl border bg-white border-neutral-200/40 shadow-[0_8px_30px_rgb(0,0,0,0.03)] flex flex-col justify-between min-h-[290px] relative overflow-hidden">
+          <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl border bg-white border-neutral-200/40 shadow-[0_8px_30px_rgb(0,0,0,0.03)] flex flex-col justify-between min-h-[260px] sm:min-h-[290px] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-xl pointer-events-none"></div>
 
             <AnimatePresence mode="wait">
@@ -414,53 +415,53 @@ export default function GeographyFootprint() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.15 }}
-                className="space-y-4"
+                className="space-y-4 font-sans"
               >
                 <div className="flex justify-between items-start gap-2">
                   <div className="space-y-1">
-                    <span className={`inline-flex items-center gap-1 text-[9px] px-2.5 py-1 rounded-full font-mono font-bold uppercase tracking-wider ${
+                    <span className={`inline-flex items-center gap-1 text-[8px] sm:text-[9px] px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full font-mono font-bold uppercase tracking-wider ${
                       selectedGeo.slug === "pk" 
                         ? "bg-emerald-50 text-emerald-600 border border-emerald-200" 
                         : "bg-blue-50 text-blue-600 border border-blue-200"
                     }`}>
-                      <MapPin className="w-3 h-3" /> {selectedGeo.status}
+                      <MapPin className="w-3 h-3 shrink-0" /> {selectedGeo.status}
                     </span>
-                    <h3 className="text-lg font-display font-black text-neutral-850 uppercase tracking-tight leading-snug">
+                    <h3 className="text-base sm:text-lg font-display font-black text-neutral-850 uppercase tracking-tight leading-snug">
                       {selectedGeo.name}
                     </h3>
                   </div>
                   
                   <div className="text-right whitespace-nowrap">
-                    <span className="text-[9px] text-neutral-400 font-mono block font-bold">REVENUE CONTRIBUTED</span>
-                    <span className="font-mono text-neutral-850 text-base font-extrabold">{selectedGeo.revenue} PKR</span>
+                    <span className="text-[8px] sm:text-[9px] text-neutral-400 font-mono block font-bold">REVENUE CONTRIBUTED</span>
+                    <span className="font-mono text-neutral-850 text-sm sm:text-base font-extrabold">{selectedGeo.revenue} PKR</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-neutral-600 leading-relaxed font-sans font-medium">
+                <p className="text-[11px] sm:text-xs text-neutral-600 leading-relaxed font-sans font-medium">
                   {selectedGeo.description}
                 </p>
 
                 {/* Sub KPI regional metrics */}
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-neutral-100">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-3.5 sm:pt-4 border-t border-neutral-100">
                   <div className="space-y-0.5">
-                    <span className="text-[9px] text-neutral-400 font-mono block uppercase font-bold">Weight of Exports</span>
-                    <span className="text-neutral-800 text-sm font-sans font-extrabold">{selectedGeo.percentage}% of global group</span>
+                    <span className="text-[8px] sm:text-[9px] text-neutral-400 font-mono block uppercase font-bold">Weight of Exports</span>
+                    <span className="text-neutral-800 text-[11px] sm:text-sm font-sans font-extrabold">{selectedGeo.percentage}% of global group</span>
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-[9px] text-neutral-400 font-mono block uppercase font-bold">Y/Y Growth Scale</span>
-                    <span className="text-emerald-600 text-sm font-sans font-extrabold inline-flex items-center">
+                    <span className="text-[8px] sm:text-[9px] text-neutral-400 font-mono block uppercase font-bold">Y/Y Growth Scale</span>
+                    <span className="text-emerald-750 text-[11px] sm:text-sm font-sans font-extrabold inline-flex items-center">
                       {selectedGeo.growth}
-                      <ArrowUpRight className="w-4 h-4 ml-0.5" />
+                      <ArrowUpRight className="w-3.5 h-3.5 ml-0.5 shrink-0" />
                     </span>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
             
-            <div className="mt-6 p-3.5 bg-neutral-50 border border-neutral-200/50 rounded-xl flex items-start space-x-2.5 text-[10px] font-sans text-neutral-500 font-bold uppercase tracking-wider leading-relaxed">
-              <Compass className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
+            <div className="mt-4 sm:mt-6 p-3 sm:p-3.5 bg-neutral-50 border border-neutral-200/50 rounded-xl flex items-start space-x-2 text-[8.5px] sm:text-[10px] font-sans text-neutral-500 font-bold uppercase tracking-normal sm:tracking-wider leading-relaxed">
+              <Compass className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-600 flex-shrink-0 mt-0.5" />
               <div>
-                <span className="text-purple-700 font-extrabold">Expansion Strategy:</span> Establishing Europe UK specialized delivery entities, and aggressively scaling the North America market via the Confiz technology consolidation models.
+                <span className="text-purple-750 font-extrabold">Expansion Strategy:</span> Establishing Europe UK specialized delivery entities, and aggressively scaling the North America market via the Confiz technology consolidation models.
               </div>
             </div>
           </div>

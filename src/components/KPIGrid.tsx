@@ -83,29 +83,29 @@ export default function KPIGrid() {
   return (
     <div className="space-y-4">
       {/* KPI Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         {isLoading ? (
           Array.from({ length: 6 }).map((_, idx) => (
             <div
               key={idx}
-              className="relative overflow-hidden p-6 rounded-2xl border bg-white/90 border-white/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] pointer-events-none select-none"
+              className="relative overflow-hidden p-4 sm:p-6 rounded-xl sm:rounded-2xl border bg-white/90 border-white/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] pointer-events-none select-none"
             >
               {/* Soft decorative ambient glow in top-right */}
               <div className="absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-xl pointer-events-none"></div>
 
-              <div className="flex justify-between items-start mb-4">
-                <div className="h-9 w-9 bg-neutral-200 animate-pulse rounded-xl" />
-                <div className="h-5 w-20 bg-neutral-200 animate-pulse rounded-lg" />
+              <div className="flex justify-between items-start mb-3 sm:mb-4">
+                <div className="h-8 w-8 sm:h-9 sm:w-9 bg-neutral-200 animate-pulse rounded-lg sm:rounded-xl" />
+                <div className="h-4.5 w-16 sm:h-5 sm:w-20 bg-neutral-200 animate-pulse rounded-md sm:rounded-lg" />
               </div>
 
-              <div className="space-y-2.5 mb-4">
-                <div className="h-3 w-16 bg-neutral-150 animate-pulse rounded" />
-                <div className="h-8.5 w-28 bg-neutral-200 animate-pulse rounded-lg" />
+              <div className="space-y-2 mb-3.5 sm:mb-4">
+                <div className="h-2.5 w-12 sm:h-3 sm:w-16 bg-neutral-150 animate-pulse rounded" />
+                <div className="h-7 w-20 sm:h-8.5 sm:w-28 bg-neutral-200 animate-pulse rounded-md" />
               </div>
 
-              <div className="flex justify-between items-center pt-2.5 border-t border-neutral-100">
-                <div className="h-3.5 w-24 bg-neutral-150 animate-pulse rounded" />
-                <div className="h-3.5 w-10 bg-neutral-200 animate-pulse rounded" />
+              <div className="flex justify-between items-center pt-2 border-t border-neutral-100">
+                <div className="h-3 w-20 bg-neutral-150 animate-pulse rounded" />
+                <div className="h-3 w-8 bg-neutral-200 animate-pulse rounded" />
               </div>
             </div>
           ))
@@ -118,7 +118,7 @@ export default function KPIGrid() {
               transition={{ duration: 0.3, delay: idx * 0.04 }}
               whileHover={{ y: -4, scale: 1.01 }}
               onClick={() => setSelectedKpi(kpi)}
-              className="relative cursor-pointer overflow-hidden p-6 rounded-2xl border transition-all duration-300
+              className="relative cursor-pointer overflow-hidden p-4 sm:p-6 rounded-xl sm:rounded-2xl border transition-all duration-300
                 /* Premium crisp white design styling */
                 bg-white/90 backdrop-blur-md 
                 border-white/90
@@ -129,11 +129,11 @@ export default function KPIGrid() {
               {/* Soft decorative ambient glow in top-right */}
               <div className="absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl pointer-events-none"></div>
 
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <div className="p-2 rounded-xl bg-neutral-100/80 backdrop-blur-sm border border-neutral-200/50 text-neutral-600">
-                  {kpi.icon}
+              <div className="flex justify-between items-start mb-3 sm:mb-4 relative z-10">
+                <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-neutral-100/80 backdrop-blur-sm border border-neutral-200/50 text-neutral-650">
+                  {React.cloneElement(kpi.icon as React.ReactElement, { className: "w-4 h-4 sm:w-5 sm:h-5 text-neutral-600" })}
                 </div>
-                <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded-lg ${
+                <span className={`text-[8px] sm:text-[10px] uppercase font-mono font-bold tracking-normal sm:tracking-wider px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md sm:rounded-lg ${
                   kpi.isPositive 
                     ? "bg-emerald-50 text-emerald-600 border border-emerald-500/10" 
                     : "bg-rose-50 text-rose-600"
@@ -142,19 +142,19 @@ export default function KPIGrid() {
                 </span>
               </div>
 
-              <div className="space-y-1 mb-3 relative z-10">
-                <span className="text-[10px] tracking-widest font-mono text-neutral-400 uppercase font-bold">
+              <div className="space-y-0.5 sm:space-y-1 mb-2 sm:mb-3 relative z-10">
+                <span className="text-[8px] sm:text-[10px] tracking-wider sm:tracking-widest font-mono text-neutral-400 uppercase font-extrabold pb-0.5 block">
                   {kpi.label}
                 </span>
-                <h3 className="text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-neutral-850">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-black tracking-tight text-neutral-850">
                   {kpi.value}
                 </h3>
               </div>
 
-              <div className="flex justify-between items-center text-[10px] text-neutral-500 font-bold uppercase tracking-widest pt-2 border-t border-neutral-100 relative z-10">
+              <div className="flex justify-between items-center text-[8px] sm:text-[10px] text-neutral-500 font-extrabold uppercase tracking-normal sm:tracking-widest pt-2.5 border-t border-neutral-100 relative z-10">
                 <span>{kpi.sublabel}</span>
-                <span className="text-blue-600 group-hover:text-purple-600 flex items-center gap-1 font-semibold">
-                  More <Info className="w-3.5 h-3.5 inline" />
+                <span className="text-blue-650 group-hover:text-purple-600 flex items-center gap-1 font-bold">
+                  More <Info className="w-3 h-3 sm:w-3.5 sm:h-3.5 inline" />
                 </span>
               </div>
             </motion.div>
@@ -172,25 +172,25 @@ export default function KPIGrid() {
             transition={{ type: "spring", stiffness: 220, damping: 25 }}
             className="overflow-hidden"
           >
-            <div className="p-6 rounded-2xl border bg-white border-blue-500/15 relative shadow-sm">
+            <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl border bg-white border-blue-500/15 relative shadow-xs">
               <button 
                 onClick={() => setSelectedKpi(null)}
-                className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-neutral-100 transition-colors cursor-pointer text-neutral-500"
+                className="absolute top-4 right-4 p-1.5 rounded-full hover:bg-neutral-100 transition-colors cursor-pointer text-neutral-400"
               >
-                <X className="w-4 h-4" />
+                <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
               
-              <div className="flex items-center space-x-3 mb-2">
-                <Sparkles className="w-4 h-4 text-purple-500 animate-pulse" />
-                <span className="text-[10px] tracking-widest font-mono text-purple-600 uppercase font-bold">
+              <div className="flex items-center space-x-2 sm:space-x-3 mb-1.5 sm:mb-2">
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-500 animate-pulse shrink-0" />
+                <span className="text-[8px] sm:text-[10px] tracking-wider sm:tracking-widest font-mono text-purple-600 uppercase font-extrabold">
                   Telemetry Insights: {selectedKpi.label}
                 </span>
               </div>
 
-              <h4 className="text-lg font-display font-bold text-neutral-850 mb-1">
+              <h4 className="text-sm sm:text-lg font-display font-black text-neutral-850 mb-1">
                 {selectedKpi.label} &mdash; {selectedKpi.value} ({selectedKpi.change})
               </h4>
-              <p className="text-xs text-neutral-600 leading-relaxed font-sans max-w-4xl">
+              <p className="text-[11px] sm:text-xs text-neutral-500 leading-relaxed font-sans max-w-4xl font-medium">
                 {selectedKpi.metricDetails}
               </p>
             </div>
